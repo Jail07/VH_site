@@ -23,7 +23,7 @@
             <div class="d-flex header-content">
                 <div class="header-nav">
                     <ul class="d-flex flex-center">
-                        <li><a href="#">{{ header_text_home.content }}</a></li>
+                        <li><a href="home">{{ header_text_home.content }}</a></li>
                         <li><a href="#">{{ header_text_catalog.content }}</a></li>
                         <li><a href="#">{{ header_text_contact.content }}</a></li>
                         <li><a href="#">{{ header_text_features.content }}</a></li>
@@ -231,15 +231,14 @@ gameContainer.addEventListener('touchend', () => {
 });
 </script>
     </section>
-
     <section class="section">
         <div class="FAQ">
             <h1 class="name-faq">F.A.Q.</h1>
             {% for faq in faqs %}
-            <button class="question-btn" onclick="toggleAnswer('answer1')">{{ faq.question}}
+            <button class="question-btn" onclick="toggleAnswer('{{ faq.id }}')">{{ faq.question}}
                 <i class="fa-solid fa-arrow-down"></i>
             </button>
-            <div class="answer" id="answer1">
+            <div class="answer" id="{{ faq.id }}">
                 <i class="fa-solid fa-arrow-up"></i>
                 <p>{{ faq.answer}}</p>
             </div>

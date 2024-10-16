@@ -6,11 +6,81 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.views import View
 from django.contrib.auth.decorators import login_required
 
+from django.shortcuts import render, get_object_or_404
+from .models import TextBlock, Game, Faq, Image, FeaturesText
+
 from users.forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 
 def index(request):
-    return render(request, 'web/index.html')
+    # Text
+    header_text_home = get_object_or_404(TextBlock, identifier='header_text_home')
+    header_text_catalog = get_object_or_404(TextBlock, identifier='header_text_catalog')
+    header_text_contact = get_object_or_404(TextBlock, identifier='header_text_contact')
+    header_text_features = get_object_or_404(TextBlock, identifier='header_text_features')
+    home_title = get_object_or_404(TextBlock, identifier='home_title')
+    home_text = get_object_or_404(TextBlock, identifier='home_text')
+    home_tex2 = get_object_or_404(TextBlock, identifier='home_text2')
+    button_text1 = get_object_or_404(TextBlock, identifier='button_text1')
+    button_text2 = get_object_or_404(TextBlock, identifier='button_text2')
+    button_text3 = get_object_or_404(TextBlock, identifier='button_text3')
+    title_features = get_object_or_404(TextBlock, identifier='title_features')
+    jane = get_object_or_404(TextBlock, identifier='jane')
+    des = get_object_or_404(TextBlock, identifier='des')
+    view = get_object_or_404(TextBlock, identifier='view')
+    discount = get_object_or_404(TextBlock, identifier='discount')
+    contact = get_object_or_404(TextBlock, identifier='contact')
+    # Text
 
+    # Images
+    background = get_object_or_404(Image, identifier='background')
+    man_with_items = get_object_or_404(Image, identifier='man_with_items')
+    man = get_object_or_404(Image, identifier='man')
+    vh = get_object_or_404(Image, identifier='vh')
+    users = get_object_or_404(Image, identifier='users')
+    logo = get_object_or_404(Image, identifier='logo')
+    woman_with_comment = get_object_or_404(Image, identifier='woman_with_comment')
+    comment = get_object_or_404(Image, identifier='comment')
+    woman = get_object_or_404(Image, identifier='woman')
+    # Images
+    features = FeaturesText.objects.all()
+    games = Game.objects.all()
+    faqs = Faq.objects.all()
+
+    return render(request, 'web/index.html', {
+        # Text
+        'header_text_home': header_text_home,
+        'header_text_catalog': header_text_catalog,
+        'header_text_contact': header_text_contact,
+        'header_text_features': header_text_features,
+        'home_title': home_title,
+        'home_text': home_text,
+        'home_tex2': home_tex2,
+        'button_text1': button_text1,
+        'button_text2': button_text2,
+        'button_text3': button_text3,
+        'title_features': title_features,
+        'jane': jane,
+        'des': des,
+        'view': view,
+        'discount': discount,
+        'contact': contact,
+        # Text
+
+        # Images
+        'background': background,
+        'man_with_items': man_with_items,
+        'man': man,
+        'vh': vh,
+        'users': users,
+        'logo': logo,
+        'woman_with_comment': woman_with_comment,
+        'comment': comment,
+        'woman': woman,
+        # Images
+        'features': features,
+        'games': games,
+        'faqs': faqs,
+    })
 
 def register(request):
     return render(request, 'users/register.html')
