@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Headsets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js"></script>
+    <script src="https://kit.fontawesome.com/74ae139182.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+
+<header>
+    <div class="limit">
+        <div class="a1">
+            <div class="d-flex header-content">
+                <div class="header-nav">
+                    <ul class="d-flex flex-center">
+                        <li><a href="#">{{ header_text_home.content }}</a></li>
+                        <li><a href="#">{{ header_text_catalog.content }}</a></li>
+                        <li><a href="#">{{ header_text_contact.content }}</a></li>
+                        <li><a href="#">{{ header_text_features.content }}</a></li>
+                    </ul>
+                </div>
+                <div class="header-log">
+                    <i class="fa-solid fa-bars" id="menu"></i>
+                    <img src="{{ logo.image.url }}" class="img-logo">
+                </div>
+                <div class="header-search">
+                    <div class="search-container">
+                        <input name="search" type="text" placeholder="Search games & products..">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div>
+                        <i class="fas fa-shopping-bag" style="font-size: 12px; margin-left: 10px;" id="shop-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="limit-main section" id="home">
+        <div class="a2">
+            <img src="{{ background.image.url }}" class="background-line">
+        </div>
+        <div>
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <div class="home__header">
+                        <h1 class="home__title">{{ home_title.content }}</h1>
+                    </div>
+                    <div>
+                        <h2 class="home__title2">{{ home_text.content }}</h2>
+                    </div>
+
+                    <div class="home__footer">
+                        <div class="feature-item">
+                            <img src="{% static 'images/star.png' %}" alt="Star" class="star-img">{{ home_tex2.content }}
+                        </div>
+                        <div class="buttons-sec1">
+                            <br>
+                            <a href="#" class="button--flex-button1">{{ button_text1.content }}<i class="arrow right"></i></a>
+                            <a href="#" class="button--flex-button2">{{ button_text2.content }}</a>
+                        </div>
+                        <div>
+                            <br>
+                            <h4 class="home__title-description3">Follow Us</h4>
+                            <div class="social-icons">
+                                <img src="{% static 'images/twitter.png' %}" alt="Twitter" class="icons-img">
+                                <img src="{% static 'images/instagramm.png' %}" alt="Instagram" class="icons-img">
+                                <img src="{% static 'images/discord.png' %}" alt="Discord" class="icons-img">
+                                <img src="{% static 'images/facebook.png' %}" alt="Facebook" class="icons-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="{{ man_with_items.image.url }}" alt="Virtual Headset" class="image-img">
+                    <img src="{{ man.image.url }}" class="image-img-man">
+                    <div class="icons1">
+                        <div class="icon"><img src="{% static 'images/im1.png' %}" class="ic"><p>Enhanced Education</p></div>
+                        <div class="icon"><img src="{% static 'images/im2.png' %}" class="ic"><p>Training and Simulation</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="limit-main section" id="home1">
+        <div class="a2">
+            <div class="home__container2 container grid">
+                <div class="image2">
+                    <img src="{{ vh.image.url }}" alt="Virtual Headset" class="image2-img">
+                </div>
+                <div class="home__data2">
+                    <div class="home__header2">
+                        <h1 class="home__title_second">{{ title_features.content }}
+                        </h1>
+                    </div>
+                    <div class="features-container">
+                        <div class="feature-list">
+                            {% for fact in features %}
+                            <div class="feature-item" id="fact-1">
+                                <img src="{% static 'images/star2.png' %}" alt="Star" class="star-img">{{ fact.content }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="home__footer_second">
+                        <div>
+                            <h2 class="home__title-description2_second"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="limit-main">
+            <div class="home__container container grid">
+                <div class="div1">
+                    <div class="home__data3">
+                        <div class="home__header3">
+                            <h6 class="home__title3">{{  jane.content }}</h6>
+                        </div>
+                        <div class="home__footer">
+                            <div class="feature-item-3">
+                                <img src="{% static 'images/star.png' %}" alt="Star" class="star-img"> {{ des.content }}
+                            </div>
+                            <div class="button-container1">
+                                <a href="#" class="button-blog">Read my blog</a>
+                            </div>
+                            <div class="img-users"><img src="{{ users.image.url }}" class="users"><h6>{{ view.content }}</h6></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="images">
+                    <img src="{{ woman.image.url}}" alt="Virtual Headset" class="image3-img">
+                    <img src="{{ comment.image.url }}" alt="Virtual Headset" class="image4-img">
+                    <img src="{{ woman_with_comment.image.url }}" alt="Virtual Headset" class="image5-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--    -->
+
+    <section class="section">
+        <div class="game-title">
+            <h1 class="top">Top Games</h1>
+            <p id="p-text">{{ discount.content }}</p>
+            <div class="button-container">
+                <button class="button" id="leftBtn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button class="button" id="rightBtn">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+        <div class="game" id="gameContainer">
+            {% for game in games %}
+                <div><img src="{{ game.image.url }}" alt="{{ game.title }}"><p>{{ game.title }}</p></div>
+            {% endfor %}
+        </div>
+        <script class="button-scroll">
+const leftBtn = document.getElementById('leftBtn');
+const rightBtn = document.getElementById('rightBtn');
+const gameContainer = document.getElementById('gameContainer');
+
+let scrollAmount = 0;
+const scrollStep = 300;
+
+leftBtn.addEventListener('click', () => {
+    animateButton(leftBtn);
+    scrollAmount -= scrollStep;
+    gameContainer.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+});
+
+rightBtn.addEventListener('click', () => {
+    animateButton(rightBtn);
+    scrollAmount += scrollStep;
+    gameContainer.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+});</script>
+        <script>
+function animateButton(button) {
+    button.classList.add('active');
+    setTimeout(() => {
+        button.classList.remove('active');
+    }, 100);
+}
+        </script>
+<script class="touch-scroll">
+const gameContainer = document.getElementById('gameContainer');
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+gameContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+gameContainer.addEventListener('touchmove', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+});
+
+gameContainer.addEventListener('touchend', () => {
+    const swipeDistance = touchStartX - touchEndX;
+    if (swipeDistance > 50) {
+        gameContainer.scrollBy({
+            left: 250,
+            behavior: 'smooth'
+        });
+    } else if (swipeDistance < -50) {
+        gameContainer.scrollBy({
+            left: -250,
+            behavior: 'smooth'
+        });
+    }
+});
+</script>
+    </section>
+
+    <section class="section">
+        <div class="FAQ">
+            <h1 class="name-faq">F.A.Q.</h1>
+            {% for faq in faqs %}
+            <button class="question-btn" onclick="toggleAnswer('answer1')">{{ faq.question}}
+                <i class="fa-solid fa-arrow-down"></i>
+            </button>
+            <div class="answer" id="answer1">
+                <i class="fa-solid fa-arrow-up"></i>
+                <p>{{ faq.answer}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-limit">
+            <div class="row">
+                <div class="footer-block footer-left" id="first-block">
+                    <img class="logo" src="{{ logo.image.url }}"><br>
+                    <div class="icons">
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-discord"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <p class="footer-a">{{ contact.content }}</p>
+                </div>
+                <div class="footer-block" id="second-block">
+                    <p class="footer-name-menu">Menu</p><br>
+                    <a class="footer-a" href="">{{ header_text_home.content }}</a><br>
+                    <a class="footer-a" href="">{{ header_text_catalog.content }}</a><br>
+                    <a class="footer-a" href="">{{ header_text_features.content }}</a><br>
+                    <a class="footer-a" href="">{{ header_text_contact.content }}</a><br>
+                </div>
+                <div class="footer-block" id="third-block">
+                    <p class="footer-name-menu">Company</p><br>
+                    <a class="footer-a" href="login">Login</a><br>
+                    <a class="footer-a" href="registration">Sing up</a><br>
+                    <a class="footer-a" href="">Privacy</a><br>
+                    <a class="footer-a" href="">Product</a><br>
+                </div>
+                <div class="footer-block" id="sub">
+                    <p class="footer-name-menu">Subscribe Our News Letter</p><br>
+                    <p class="footer-a">Sure, please provide your email address to subscribe to newsletter</p><br>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Enter your mail..." aria-describedby="button-addon2">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-line">
+                    <p>© 2023 Your Company Name. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>
